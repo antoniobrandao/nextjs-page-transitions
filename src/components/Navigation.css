@@ -1,0 +1,8 @@
+.nav a {
+  user-select: none;
+  opacity: 0.5;
+}
+
+.nav a.active {
+  opacity: 1;
+}
