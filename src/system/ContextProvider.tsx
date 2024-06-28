@@ -1,25 +1,24 @@
 'use client'
 
-import React from 'react'
 import { ReactNode } from 'react'
 import { useWindowSize } from '@uidotdev/usehooks'
-import SectionContext from './Context'
+import Context from './Context'
 
 type ProviderProps = {
   children: ReactNode
 }
 
-const SectionProvider = (props: ProviderProps ) => {
+const ContextProvider = (props: ProviderProps ) => {
   const size = useWindowSize()
   return (
-    <SectionContext.Provider
+    <Context.Provider
       value={{
         windowSize: size,
       }}
     >
       {props.children}
-    </SectionContext.Provider>
+    </Context.Provider>
   )
 }
 
-export default SectionProvider
+export default ContextProvider

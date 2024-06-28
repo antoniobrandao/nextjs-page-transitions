@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { LayoutRouterContext } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 import { useContext, useRef } from 'react';
-import SectionContext from './Context'
+import Context from './Context'
 
 function FrozenRouter(props: { children: React.ReactNode }) {
   const context = useContext(LayoutRouterContext ?? {});
@@ -23,7 +23,7 @@ function FrozenRouter(props: { children: React.ReactNode }) {
 }
 
 const PageTransitionEffect = ({ children }: { children: React.ReactNode }) => {
-  const { windowSize } = React.useContext(SectionContext)
+  const { windowSize } = React.useContext(Context)
   
   // The `key` is tied to the url using the `usePathname` hook.
   const key = usePathname();
